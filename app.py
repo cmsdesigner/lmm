@@ -1,5 +1,5 @@
 from flask import Flask
-from config import DevConfig
+from config import DevConfig, ProdConfig
 from extensions import db
 from os import getenv
 
@@ -26,7 +26,9 @@ def register_blueprints(app):
 if __name__ == '__main__':
     if getenv('PORT'):
         port = int(getenv('PORT'))
+        app = create_app(ProdConfig)
     else:
         port = 5000
-    app = create_app()
+        app = create_app()
+
     app.run(port=port, host="0.0.0.0")

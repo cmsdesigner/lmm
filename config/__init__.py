@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 import os
 
 
@@ -18,7 +17,7 @@ class BaseConfig(object):
 
 class DevConfig(BaseConfig):
     DEBUG = True
-    SQLALCHEMY_DATABASE_URI = 'mysql://root@localhost/hmda'
+    SQLALCHEMY_DATABASE_URI = 'postgresql://lapiduzd@localhost:5432/lmm_dev'
 
 
 class TestConfig(BaseConfig):
@@ -26,3 +25,6 @@ class TestConfig(BaseConfig):
     CSRF_ENABLED = False
 
     SQLALCHEMY_DATABASE_URI = 'mysql://root@localhost/lmm_test'
+
+class ProdConfig(BaseConfig):
+    SQLALCHEMY_DATABASE_URI = os.getenv('HEROKU_POSTGRESQL_CHARCOAL_URL')
