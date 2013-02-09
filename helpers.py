@@ -1,6 +1,5 @@
 import re
 from unicodedata import normalize
-from pyes import *
 
 def slugify(text, delim=u'-'):
     """Generates an ASCII-only slug."""
