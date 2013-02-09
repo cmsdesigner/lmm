@@ -12,7 +12,7 @@ def index():
 @home.route('/next', methods=['GET', 'POST'])
 def next():
     if request.args.get('zip') != '':
-        zip = Zip.query.filter_by(zip=request.args.get('zip')).first()
+        zip = Zip.query.filter_by(zip=request.args.get('zip').zfill(5)).first()
         if zip:
             dti_conv = _dti_to_json(zip.dti_info(1))
             dti_fha = _dti_to_json(zip.dti_info(2))
