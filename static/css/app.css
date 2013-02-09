@@ -1,11 +1,7 @@
-body {
-    padding-top: 30px;
-}
-
 h2 {
     font-weight: normal;
-    line-height: 30px;
-    font-size: 22px;
+    line-height: 24px;
+    font-size: 20px;
 }
 
 .ui-slider-input {
@@ -13,8 +9,6 @@ h2 {
 }
 
 .page-container  {
-    width: 85%;
-    margin: 0 auto;
 }
 
 
@@ -33,9 +27,11 @@ h2 {
 
 .result h5 {
     float: left;
-    font-size: 30px;
+    font-size: 18px;
     font-weight: normal;
-    width: 330px;
+    width: 200px;
+    margin-top: 5px;
+    margin-left: 10px;
 }
 
 .result-cont {
@@ -49,9 +45,9 @@ h2 {
 
 .home-desc h1 {
     float: left;
-    width: 300px;
-    font-size: 35px;
+    width: 210px;
+    font-size: 24px;
     font-weight: bold;
-    margin-left: 20px;
+    margin-left: 10px;
 }
 
