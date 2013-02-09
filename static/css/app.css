@@ -1,0 +1,57 @@
+body {
+    padding-top: 30px;
+}
+
+h2 {
+    font-weight: normal;
+    line-height: 30px;
+    font-size: 22px;
+}
+
+.ui-slider-input {
+    display : none !important;
+}
+
+.page-container  {
+    width: 85%;
+    margin: 0 auto;
+}
+
+
+.page-container div.ui-slider {
+    width: 90%;
+}
+
+.page-container fieldset {
+    margin-top: 10px;
+    margin-bottom: 40px;
+}
+
+.result embed {
+    float: left;
+}
+
+.result h5 {
+    float: left;
+    font-size: 30px;
+    font-weight: normal;
+    width: 330px;
+}
+
+.result-cont {
+    height: 200px;
+    overflow: hidden;
+}
+
+.home-desc embed {
+    float: left;
+}
+
+.home-desc h1 {
+    float: left;
+    width: 300px;
+    font-size: 35px;
+    font-weight: bold;
+    margin-left: 20px;
+}
+

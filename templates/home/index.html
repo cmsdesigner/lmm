@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <form action="/next" method="get">
+        {{ csrf_token }}
+
+        <div style="position: absolute; top: 50%; width: 100%; margin-top: -200px; ">
+            <div style="margin: 0 auto; width: 80%;">
+
+                <div class="home-desc">
+                    <embed src="/static/img/bank.svg" type="image/svg+xml" />
+                    <h1>Will the bank approve my loan?</h1>
+                </div>
+
+                <div style="clear: both">&nbsp;</div>
+                <p>
+                    Enter your desired zip code:
+                    {% if invalid_zip %}
+                        <span style="color: red;">(Please enter a valid US zip code)</span>
+                    {% endif %}
+                </p>
+
+                <div data-role="fieldcontain" class="ui-hide-label">
+                    <label for="zip">Zip Code:</label>
+                    <input type="number" name="zip" id="zip" value="" placeholder="Zip Code" data-mini="true"/>
+                </div>
+
+                <button type="submit" data-theme="a" class="ui-btn-hidden" aria-disabled="false">Go</button>
+            </div>
+        </div>
+    </form>
+{% endblock %}
