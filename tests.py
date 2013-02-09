@@ -9,9 +9,9 @@
 
 from flask.ext.testing import TestCase as Base, Twill
 
-from lmm import create_app
-from lmm.config import TestConfig
-from lmm.extensions import db
+from app import create_app
+from config import TestConfig
+from extensions import db
 
 
 class TestCase(Base):

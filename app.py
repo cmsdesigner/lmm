@@ -1,6 +1,6 @@
 from flask import Flask
-from lmm.config import DevConfig
-from lmm.extensions import db
+from config import DevConfig
+from extensions import db
 
 def create_app(config=None):
     app = Flask(__name__)
@@ -16,7 +16,7 @@ def create_app(config=None):
 
 
 def register_blueprints(app):
-    from lmm.home.views import home
+    from home.views import home
 
     for blueprint in (home, ):
         app.register_blueprint(blueprint)
