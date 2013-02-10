@@ -12,8 +12,7 @@ function addCommas(nStr) {
 
 
 function status(dti, zip_dti) {
-
-    var dti_diff = Number((dti - zip_dti.dti).toFixed(2))
+    var dti_diff = Number((dti - (zip_dti.dti - 0.05)).toFixed(2))
     if (dti_diff >= 0) {
         return 1;
     } else if ((zip_dti_conv.std_dti < 0.2 && Math.abs(dti_diff) < zip_dti_conv.std_dti) || Math.abs(dti_diff) < 0.2) {

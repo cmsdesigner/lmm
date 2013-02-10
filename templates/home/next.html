@@ -6,32 +6,16 @@
         <h2>
             Will they approve me with my good credit in {{ zip.city|title }}, {{ zip.state }}?
         </h2>
-        <fieldset>
-            <div style="float: right;" id="income-legend">
-                $ <span></span>
-            </div>
-            <label for="slider-1">What is your income?</label>
-            <input type="range" name="slider-income" id="slider-income" step="1000" value="100000" min="0" max="800000" data-highlight="true" data-legend="income-legend"/>
-        </fieldset>
-
-        <fieldset>
-            <div style="float: right;" id="loan-legend">
-                $ <span></span>
-            </div>
-            <label for="slider-1">What is the loan amount?</label>
-            <input type="range" name="slider-loan" id="slider-loan" step="1000" value="350000" min="0" max="1000000" data-highlight="true" data-legend="loan-legend"/>
-        </fieldset>
-
-        <div data-role="fieldcontain" class="ui-hide-label">
-            <fieldset data-role="controlgroup">
-               <legend>FHA/VA loan?</legend>
-               <input type="checkbox" name="checkbox-fha" id="checkbox-fha" class="custom" value='1' />
-               <label for="checkbox-fha">FHA/VA loan?</label>
-            </fieldset>
-        </div>
-
 
         <div class="result-cont">
+            <div class="result" id="result-initial">
+                <embed src="/static/img/person.svg" type="image/svg+xml" />
+                <h5>
+                    <B>Enter your information below</B> <br/>
+                    
+                </h5>
+            </div>
+
             <div class="result" id="result-good" style="display:none;">
                 <embed src="/static/img/like.svg" type="image/svg+xml" />
                 <h5>
@@ -45,7 +29,7 @@
                 <embed src="/static/img/question.svg" type="image/svg+xml" />
                 <h5>
                     <B>Hmmm</B> <br/>
-                    Loans like this have been approved before... <br/> <span id="more-info"></span>
+                    Loans like these have been approved before... <br/> <span id="more-info"></span>
                 </h5>
             </div>
 
@@ -53,10 +37,34 @@
                 <embed src="/static/img/stop.svg" type="image/svg+xml" />
                 <h5>
                     <B>Bad news</B> <br/>
-                    In this conditions you should reconsider. <span id="more-info"></span>
+                    In these conditions you should reconsider. <span id="more-info"></span>
                     
                 </h5>
             </div>
+        </div>
+
+        <fieldset>
+            <div style="float: right;" id="income-legend">
+                $ <span></span>
+            </div>
+            <label for="slider-1">What is your income?</label>
+            <input type="range" name="slider-income" id="slider-income" step="1000" value="100000" min="0" max="800000" data-highlight="true" data-legend="income-legend"/>
+        </fieldset>
+
+        <fieldset>
+            <div style="float: right;" id="loan-legend">
+                $ <span></span>
+            </div>
+            <label for="slider-1">What is the loan amount?</label>
+            <input type="range" name="slider-loan" id="slider-loan" step="1000" value="350000" min="0" max="1000000" data-highlight="true" data-legend="loan-legend" />
+        </fieldset>
+
+        <div data-role="fieldcontain" class="ui-hide-label">
+            <fieldset data-role="controlgroup">
+               <legend>FHA/VA loan?</legend>
+               <input type="checkbox" name="checkbox-fha" id="checkbox-fha" class="custom" value='1' />
+               <label for="checkbox-fha">FHA/VA loan?</label>
+            </fieldset>
         </div>
 
         
@@ -76,9 +84,15 @@
             })
             $("input[data-type=range]").bind('change', function() {
                 $('#' + $(this).attr('data-legend') + ' span').html(addCommas($(this).val()));
-                update_results();
             });
+
             $("input[data-type=range]").trigger('change');
+
+            $("input[data-type=range]").bind('change', function() {
+                update_results()
+            });
+            
+
         })
 
     </script>

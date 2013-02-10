@@ -8,9 +8,9 @@ h2 {
     display : none !important;
 }
 
-.page-container  {
+div[data-role=content] {
+    min-height: 450px;
 }
-
 
 .page-container div.ui-slider {
     width: 90%;
@@ -23,6 +23,7 @@ h2 {
 
 .result embed {
     float: left;
+    margin-right: 10px;
 }
 
 .result h5 {
@@ -35,12 +36,13 @@ h2 {
 }
 
 .result-cont {
-    height: 200px;
+    height: 100px;
     overflow: hidden;
 }
 
 .home-desc embed {
     float: left;
+    margin-top: 10px;
 }
 
 .home-desc h1 {
@@ -51,3 +53,6 @@ h2 {
     margin-left: 10px;
 }
 
+.ui-btn-active {
+    background: #999 !important;
+}

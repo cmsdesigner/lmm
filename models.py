@@ -59,6 +59,10 @@ class Zip(db.Model):
     def dti_info(self, loan_type):
         dti_info = DtiInfo.query.filter_by(state_code=self.state_fips)
         dti_info = dti_info.filter_by(county_code=self.county_fips)
-        dti_info = dti_info.filter_by(loan_type=loan_type)
-        return dti_info.first()
+        dti_info = dti_info.filter_by(loan_type=loan_type).first()
+        if not dti_info:
+            dti_info = DtiInfo.query.filter_by(state_code=self.state_fips)
+            dti_info = dti_info.filter_by(loan_type=loan_type).first()
+
+        return dti_info
 
