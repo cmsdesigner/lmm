@@ -7,7 +7,7 @@ home = Blueprint('home', __name__, template_folder='templates')
 
 @home.route('/', methods=['GET', 'POST'])
 def index():
-    return render_template('home/index.html')
+    return render_template('home/index.html', home=True)
 
 @home.route('/next', methods=['GET', 'POST'])
 def next():

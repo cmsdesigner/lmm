@@ -16,7 +16,9 @@
         <div data-role="page">
 
             <div data-role="header">
-                <a href="/" data-icon="arrow-l">Back</a>
+                {% if home != True %}
+                    <a href="/" data-icon="arrow-l">Back</a>
+                {% endif %}
                 <h1>Loan Me Maybe</h1>
             </div><!-- /header -->
 
