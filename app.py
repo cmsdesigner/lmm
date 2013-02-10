@@ -22,13 +22,13 @@ def register_blueprints(app):
     for blueprint in (home, ):
         app.register_blueprint(blueprint)
 
+if getenv('PORT'):
+    port = int(getenv('PORT'))
+    app = create_app(ProdConfig)
+else:
+    port = 5000
+    app = create_app()
+
 
 if __name__ == '__main__':
-    if getenv('PORT'):
-        port = int(getenv('PORT'))
-        app = create_app(ProdConfig)
-    else:
-        port = 5000
-        app = create_app()
-
     app.run(port=port, host="0.0.0.0")
